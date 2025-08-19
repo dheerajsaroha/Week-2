@@ -26,19 +26,19 @@ print("First Class Passenger :\n",first_class.head())
 
 # Task 2: Generate visualizations illustrate key insights
 
-# # Bar chart : Survival Rate by class
-# survival_by_class = df.groupby("Pclass")["Survived"].mean()
-# survival_by_class.plot(kind="bar",color="skyblue")
-# plt.title( "Survival Rate by class")
-# plt.ylabel("Survival Rate")
-# plt.show()
+# Bar chart : Survival Rate by class
+survival_by_class = df.groupby("Pclass")["Survived"].mean()
+survival_by_class.plot(kind="bar",color="skyblue")
+plt.title( "Survival Rate by class")
+plt.ylabel("Survival Rate")
+plt.show()
 
-# # Histogram for Age distributiion
-# sns.histplot(df["Age"],kde=True,bins = 20,color="purple")
-# plt.title("Age Distribution")
-# plt.xlabel("Age")
-# plt.ylabel("Frequency")
-# plt.show()
+# Histogram for Age distributiion
+sns.histplot(df["Age"],kde=True,bins = 20,color="purple")
+plt.title("Age Distribution")
+plt.xlabel("Age")
+plt.ylabel("Frequency")
+plt.show()
 
 # ScatterPlot
 plt.scatter(df["Age"],df["Fare"],alpha=0.5,color = "green")
@@ -46,3 +46,12 @@ plt. title("Age vs Fare")
 plt.xlabel("Age")
 plt.ylabel("Fare")
 plt.show()
+
+# Identify and interpret the pattern Anomolies
+from scipy.stats import zscore
+df['z_score'] = zscore(df['Parch'])
+anomolies_zscore = df[abs(df['z_score']) > 2]
+print(anomolies_zscore)
+
+# Summarize findings in a Report
+
