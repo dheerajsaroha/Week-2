@@ -9,4 +9,10 @@ Titanic DataSet EDA Report
     - A Positive corelation exist b/w fare and survival 
 
 3. Visual Insights:
-    -
+
+    -Age Distribution(https://github.com/dheerajsaroha/Week-2/blob/main/Day%207/visual_insights/Age%20Distribution.png)
+    -Age vs Fare(https://github.com/dheerajsaroha/Week-2/blob/main/Day%207/visual_insights/Age%20vs%20Fare.png)
+    -Survival Rate by Class(https://github.com/dheerajsaroha/Week-2/blob/main/Day%207/visual_insights/Survival%20Rate%20by%20Class.png)
+
+4. Interpret the pattern Anomolies:
+    - Find the anomolies from the dataset using the library scipy using the data column['Parch'] and found anomolies in 95 rows which is having z-score greater than 2.
